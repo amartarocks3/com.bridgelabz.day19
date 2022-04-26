@@ -7,8 +7,15 @@ public class UserReg {
 	public static void main(String[] args) {
 		System.out.println("Enter a user name");
 		Scanner sc = new Scanner(System.in);
-		boolean result = Email(sc.nextLine());
-		if(result) {
+		boolean resultFirst = FirstName(sc.nextLine());
+		boolean resultLast = LastName(sc.nextLine());
+		if(resultFirst) {
+			System.out.println("User registration is valid");
+		}
+		else {
+			System.out.println("User registration is invalid");
+		}
+		if(resultLast) {
 			System.out.println("User registration is valid");
 		}
 		else {
@@ -19,8 +26,8 @@ public class UserReg {
 		
 		return firstName.matches("^[A-Z]{1}[a-z]{2,}$");
 	}
-	public static boolean Email(String eMail) {
-		return eMail.matches("^[a-z]{3}[A-Za-z0-9+_.-]*@[a-z]{2}[.]{1}[a-z]{2}[.]*[a-z]*$");
+	public static boolean LastName(String lastName) {
+		
+		return lastName.matches("^[A-Z]{1}[a-z]{2,}$");
 	}
-
 }
