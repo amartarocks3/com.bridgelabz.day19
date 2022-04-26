@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class UserReg {
 
 	public static void main(String[] args) {
-		System.out.println("Enter a user name");
+		System.out.println("Enter first name");
 		Scanner sc = new Scanner(System.in);
 		boolean resultFirst = FirstName(sc.nextLine());
+		System.out.println("Enter last name");
 		boolean resultLast = LastName(sc.nextLine());
+		System.out.println("Enter Email id");
+		boolean resultemail = Email(sc.nextLine());
 		if(resultFirst) {
 			System.out.println("User registration is valid");
 		}
@@ -16,6 +19,12 @@ public class UserReg {
 			System.out.println("User registration is invalid");
 		}
 		if(resultLast) {
+			System.out.println("User registration is valid");
+		}
+		else {
+			System.out.println("User registration is invalid");
+		}
+		if(resultemail) {
 			System.out.println("User registration is valid");
 		}
 		else {
@@ -30,4 +39,8 @@ public class UserReg {
 		
 		return lastName.matches("^[A-Z]{1}[a-z]{2,}$");
 	}
+	public static boolean Email(String eMail) {
+		return eMail.matches("^[a-z]{3}[A-Za-z0-9+_.-]*@[a-z]{2}[.]{1}[a-z]{2}[.]*[a-z]*$");
+	}
+
 }
